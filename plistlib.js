@@ -108,8 +108,14 @@ var PlistLib = (function ()
 			}
 		};
 		
-		function _escapeAndEncode (str) {
-			return str;
+		function _escapeAndEncode (str)
+		{
+			// Source: http://stackoverflow.com/questions/7918868/how-to-escape-xml-entities-in-javascript
+		
+			return str.replace(/&/g, '&amp;')
+			          .replace(/</g, '&lt;')
+			          .replace(/>/g, '&gt;')
+			          .replace(/"/g, '&quot;');
 		}
 	}
 	

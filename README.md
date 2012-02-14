@@ -58,7 +58,7 @@ Here's what you should get as output:
 		<key>aDict</key>
 		<dict>
 			<key>anotherString</key>
-			<string><hello & hi there!></string>
+			<string>&lt;hello &amp; hi there!&gt;</string>
 			<key>aUnicodeValue</key>
 			<string>Mässig, Maß</string>
 			<key>aTrueValue</key>
