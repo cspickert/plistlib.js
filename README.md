@@ -34,7 +34,8 @@ An experimental port of [Python's plistlib module][plistlib] to JavaScript. Not 
 Here's what you should get as output:
 
 	<?xml version="1.0" encoding="UTF-8"?>
-	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0">
+	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+	<plist version="1.0">
 	<dict>
 		<key>anInt</key>
 		<integer>728</integer>
@@ -66,7 +67,7 @@ Here's what you should get as output:
 			<false/>
 		</dict>
 		<key>aDate</key>
-		<date>Mon Oct 26 1987 13:14:00 GMT-0500 (EST)</date>
+		<date>1987-10-26T18:14:00Z</date>
 	</dict>
 	</plist>
 
