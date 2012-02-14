@@ -116,7 +116,7 @@ var PlistLib = (function ()
 	function PlistWriter (file, indentLevel, indent, writeHeader)
 	{
 		DumbXMLWriter.call(this, file, indentLevel, indent);
-		this.file.write(PLISTHEADER);
+		this.file.write(PLISTHEADER + "\n");
 		
 		this.writeValue = function (value) {
 			switch(typeof(value)) {
