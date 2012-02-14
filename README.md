@@ -2,8 +2,6 @@
 
 An experimental port of [Python's plistlib module][plistlib] to JavaScript. Not fully tested and probably full of bugs, so use at your own risk!
 
-## Quick start
-
 ## Features
 
 * Convert JavaScript objects to [XML property lists][plist].
