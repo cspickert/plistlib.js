@@ -12,6 +12,11 @@ An experimental port of [Python's plistlib module][plistlib] to JavaScript. Not 
 * Currently write-only (no ability to parse XML yet).
 * Does not support binary data (the `<data>` tag).
 
+## Potential uses
+
+* Designed for use with [Google Apps Script](http://code.google.com/googleapps/appsscript/)
+* Tested on the command line using [python](python.org) and [node.js](nodejs.org)
+
 ## Example
 
 	var pl = {
