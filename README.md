@@ -15,16 +15,17 @@ An experimental port of [Python's plistlib module][plistlib] to JavaScript. Not 
 ## Requirements
 
 My goal is for this library to work in any JavaScript environment. So far, I've tested it using:
-    * [Google Apps Script](http://code.google.com/googleapps/appsscript/)
-    * [node.js][http://nodejs.org]
-    * [PhantomJS][http://www.phantomjs.org/]
+
+* [Google Apps Script](http://code.google.com/googleapps/appsscript/)
+* [node.js](http://nodejs.org)
+* [PhantomJS](http://www.phantomjs.org/)
 
 ## Testing
 
-To test on the command line in Mac OS X (requires [Xcode][http://developer.apple.com/] and either `node` or `phantomjs`):
+To test on the command line in Mac OS X (requires [Xcode](http://developer.apple.com/) and either `node` or `phantomjs`):
 
 ```bash
-$ node plistlib.js | plutil -lint -
+node plistlib.js | plutil -lint -
 <stdin>: OK
 ```
 
