@@ -21,18 +21,8 @@ var PlistLib = (function ()
 	
 	function assert(exp, message)
 	{
-		function get_error() {
-			try {
-				throw Error("");
-			} catch (err) {
-				return err;
-			}
-		}
-	
 		if (!exp) {
-			var exc = new AssertException(message);
-			console.log(get_error().stack.split("\n")[4]);
-			throw exc;
+			throw new AssertException(message);
 		}
 	}
 	
