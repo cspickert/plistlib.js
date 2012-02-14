@@ -4,6 +4,18 @@ An experimental port of [Python's plistlib module][plistlib] to JavaScript. Not 
 
 ## Quick start
 
+## Features
+
+* Convert JavaScript objects to [XML property lists][plist].
+
+## Known issues
+
+* Currently write-only (no ability to parse XML yet).
+* Does not properly escape strings (`_escapeAndEncode` is unimplemented)
+* Does not support binary data (the `<data>` tag).
+
+## Example
+
 	var pl = {
 		aString: "Doodah",
 		aList: ["A", "B", 12, 32.1, [1, 2, 3]],
@@ -21,15 +33,44 @@ An experimental port of [Python's plistlib module][plistlib] to JavaScript. Not 
 	var xml = PlistLib.writePlist(obj);
 	console.log(xml);
 
-## Features
+Here's what you should get as output:
 
-* Convert JavaScript objects to [XML property lists][plist].
-
-## Known issues
-
-* Currently write-only (no ability to parse XML yet).
-* Does not properly escape strings (`_escapeAndEncode` is unimplemented)
-* Does not support binary data (the `<data>` tag).
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0">
+	<dict>
+		<key>anInt</key>
+		<integer>728</integer>
+		<key>aString</key>
+		<string>Doodah</string>
+		<key>aList</key>
+		<array>
+			<string>A</string>
+			<string>B</string>
+			<integer>12</integer>
+			<real>32.1</real>
+			<array>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+			</array>
+		</array>
+		<key>aFloat</key>
+		<real>0.1</real>
+		<key>aDict</key>
+		<dict>
+			<key>anotherString</key>
+			<string><hello & hi there!></string>
+			<key>aUnicodeValue</key>
+			<string>Mässig, Maß</string>
+			<key>aTrueValue</key>
+			<true/>
+			<key>aFalseValue</key>
+			<false/>
+		</dict>
+		<key>aDate</key>
+		<date>Mon Oct 26 1987 13:14:00 GMT-0500 (EST)</date>
+	</dict>
+	</plist>
 
 [plistlib]: http://docs.python.org/dev/library/plistlib.html
 [plist]: http://en.wikipedia.org/wiki/Property_list
