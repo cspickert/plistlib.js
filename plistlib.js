@@ -10,17 +10,19 @@ var PlistLib = (function ()
 		return writer.file.output;
 	};
 	
-	function AssertException(message)
-	{
-		this.message = message;
-		
-		this.toString = function () {
-			return 'AssertException: ' + this.message;
-		};
-	}
-	
 	function assert(exp, message)
 	{
+		// Source: http://aymanh.com/9-javascript-tips-you-may-not-know#assertion
+	
+		function AssertException(message)
+		{
+			this.message = message || "";
+			
+			this.toString = function () {
+				return 'AssertException: ' + this.message;
+			};
+		}
+		
 		if (!exp) {
 			throw new AssertException(message);
 		}
