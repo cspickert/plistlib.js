@@ -52,6 +52,21 @@ var PlistLib = (function ()
 		constructor.prototype = prototypeObject;
 	}
 	
+	function ISODateString(d)
+	{
+		// Source: http://webcloud.se/log/JavaScript-and-ISO-8601/
+		
+		function pad(n){
+			return n < 10 ? '0' + n : n;
+		}
+		return d.getUTCFullYear()+'-'
+		+ pad(d.getUTCMonth()+1)+'-'
+		+ pad(d.getUTCDate())+'T'
+		+ pad(d.getUTCHours())+':'
+		+ pad(d.getUTCMinutes())+':'
+		+ pad(d.getUTCSeconds())+'Z'
+	}
+	
 	function DummyFile ()
 	{
 		this.output = "";
@@ -143,7 +158,7 @@ var PlistLib = (function ()
 				case "object":
 					// case date:
 					if (value instanceof Date) {
-						this.simpleElement("date", "" + value);
+						this.simpleElement("date", ISODateString(value));
 					}
 					// case array:
 					else if (value instanceof Array) {

@@ -8,7 +8,6 @@ An experimental port of [Python's plistlib module][plistlib] to JavaScript. Not 
 
 ## Known issues
 
-* [ERROR] Does not output the correct date format.
 * [ERROR] Does not properly escape strings (`_escapeAndEncode` is unimplemented)
 * Currently write-only (no ability to parse XML yet).
 * Does not support binary data (the `<data>` tag).
