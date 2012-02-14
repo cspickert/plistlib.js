@@ -12,10 +12,23 @@ An experimental port of [Python's plistlib module][plistlib] to JavaScript. Not 
 * Currently write-only (no ability to parse XML yet).
 * Does not support binary data (the `<data>` tag).
 
-## Potential uses
+## Requirements
 
-* Designed for use with [Google Apps Script](http://code.google.com/googleapps/appsscript/)
-* Tested on the command line using [python](python.org) and [node.js](nodejs.org)
+My goal is for this library to work in any JavaScript environment. So far, I've tested it using:
+    * [Google Apps Script](http://code.google.com/googleapps/appsscript/)
+    * [node.js][http://nodejs.org]
+    * [PhantomJS][http://www.phantomjs.org/]
+
+## Testing
+
+To test on the command line in Mac OS X (requires [Xcode][http://developer.apple.com/] and either `node` or `phantomjs`):
+
+```bash
+$ node plistlib.js | plutil -lint -
+<stdin>: OK
+```
+
+This verifies the example embedded in the script using `plutil(1)`.
 
 ## Example
 
